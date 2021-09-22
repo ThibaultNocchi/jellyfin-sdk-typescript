@@ -7,7 +7,7 @@
 import { AxiosInstance } from 'axios';
 
 import { Api } from './api';
-import { Discovery } from './discovery';
+import { DiscoveryService } from './discovery';
 import { ClientInfo, DeviceInfo } from './models';
 
 export interface JellyfinParameters {
@@ -27,7 +27,7 @@ export class Jellyfin {
 	constructor(parameters: JellyfinParameters) {
 		this.clientInfo = parameters.clientInfo;
 		this.deviceInfo = parameters.deviceInfo;
-		this.discovery = new Discovery(this);
+		this.discovery = new DiscoveryService(this);
 	}
 
 	/**
